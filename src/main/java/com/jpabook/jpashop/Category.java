@@ -37,4 +37,9 @@ public class Category {
     @OneToMany(mappedBy = "parent")
     private List<Category> child = new ArrayList<>();
 
+    public void addChildCategory(Category child) {
+        this.child.add(child);  // 부모 child 컬렉션에도 집어넣고
+        child.setParent(this);  // 자식에서도 부모가 누군지 집어넣어준다.
+    }
+
 }

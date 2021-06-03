@@ -22,9 +22,8 @@ public class Member {
     private Address address;
 
     // 연관관계 주인이 아닌 거울은 MappedBy를 집어넣어준다.
-    // 대상은 필드 이름으로
+    // 대상은 필드 이름으로 지정
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
-
 
 }
